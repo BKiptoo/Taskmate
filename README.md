@@ -66,7 +66,6 @@ src/
 │   ├── TaskManager.js    # Main component with state management
 │   ├── TaskForm.js       # Form for adding new tasks
 │   ├── TaskList.js       # Display list of tasks
-│   ├── TaskStats.js      # Task statistics and progress
 │   └── *.css            # Component styles
 ├── App.js               # Root component
 └── index.js            # Entry point
