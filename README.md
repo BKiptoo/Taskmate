@@ -1,225 +1,95 @@
-# 🎯 Simple TaskMate - Beginner-Friendly Task Manager
+# TaskMate - Simple Task Manager
 
-> **Submitted by:** Bettson Kiptoo  
-> **Email:** bettsonk@gmail.com  
-> **Submission Date:** Tuesday, July 29, 2025
+A beginner-friendly React application for managing your daily tasks with a clean, intuitive interface.
 
-## 📖 Project Overview
+## Features
 
-Simple TaskMate is a beginner-friendly React application that demonstrates core React concepts including **props**, **conditionals**, and **state management**. This simplified version focuses on teaching fundamental React patterns without complex features like routing or external APIs.
+- ✅ Add new tasks
+- ✅ Mark tasks as complete/incomplete
+- ✅ Delete tasks
+- ✅ View task statistics
+- ✅ Persistent data storage with JSON Server
+- ✅ Responsive design
 
-## 🎯 Learning Objectives
-
-This project demonstrates:
-- ✨ **React Props** - Passing data between components
-- 🔄 **Conditional Rendering** - Showing different content based on state
-- 📊 **State Management** - Using useState to manage data
-- 🧩 **Component Composition** - Breaking UI into reusable components
-- 🎨 **Simple Styling** - Custom CSS without frameworks
-
-## 🛠️ Tech Stack
-
-- **Frontend:** React (Create React App)
-- **Styling:** Custom CSS
-- **State Management:** React useState Hook
-- **No external APIs or complex routing**
-
-## ✨ Key Features
-
-### 📋 Simple Task Management
-- Add new tasks with a simple form
-- Mark tasks as complete/incomplete
-- Delete tasks you no longer need
-- View progress statistics
-
-### 🧩 React Components Used
-
-1. **App.js** - Main application component
-2. **TaskManager.js** - Container component managing all state
-3. **TaskForm.js** - Form component using controlled inputs
-4. **TaskList.js** - List component with conditional rendering
-5. **TaskStats.js** - Statistics component showing progress
-
-### 🔄 Props & Conditionals Examples
-
-**Props Example:**
-```jsx
-// Passing data from parent to child
-<TaskList 
-  tasks={tasks}
-  onToggle={toggleTask}
-  onDelete={deleteTask}
-/>
-```
-
-**Conditional Rendering Examples:**
-```jsx
-// Show different content based on state
-{activeSection === 'list' && <TaskList />}
-{activeSection === 'add' && <TaskForm />}
-{activeSection === 'stats' && <TaskStats />}
-
-// Show different messages based on progress
-{completionPercentage === 100 && (
-  <div>🎉 All tasks completed!</div>
-)}
-```
-
-## 🚀 Getting Started
+## Getting Started
 
 ### Prerequisites
-- Node.js (v14 or higher)
-- Basic understanding of JavaScript and React
+
+- Node.js (version 14 or higher)
+- npm or yarn
 
 ### Installation
 
-1. **Clone the repository:**
-   ```bash
-   git clone https://github.com/BKiptoo/Taskmate.git
-   cd taskmates
-   ```
+1. Clone the repository:
+```bash
+git clone <your-repo-url>
+cd taskmates
+```
 
-2. **Install dependencies:**
-   ```bash
-   npm install
-   ```
+2. Install dependencies:
+```bash
+npm install
+```
 
-3. **Start the development server:**
-   ```bash
-   npm start
-   ```
+3. Install JSON Server globally (if not already installed):
+```bash
+npm install -g json-server
+```
 
-The app will open at `http://localhost:3000`
+### Running the Application
 
-## 📁 Simple Project Structure
+1. Start the JSON Server (database):
+```bash
+json-server --watch db.json --port 3001
+```
+
+2. In a new terminal, start the React app:
+```bash
+npm start
+```
+
+3. Open your browser and go to `http://localhost:3000`
+
+## How to Use
+
+1. **View Tasks**: Click "My Tasks" to see all your tasks
+2. **Add Task**: Click "Add Task" to create a new task
+3. **Complete Task**: Click on any task to mark it as complete/incomplete
+4. **Delete Task**: Click the "Delete" button to remove a task
+5. **View Stats**: Click "Stats" to see your progress
+
+## Project Structure
 
 ```
 src/
 ├── components/
-│   ├── TaskManager.js    # Main container component
-│   ├── TaskForm.js       # Form for adding tasks
-│   ├── TaskList.js       # List of tasks with actions
-│   ├── TaskStats.js      # Progress statistics
-│   └── TaskManager.css   # Simple styling
-├── App.js                # Root component
-├── App.css               # Global styles
-└── index.js              # Entry point
+│   ├── TaskManager.js    # Main component with state management
+│   ├── TaskForm.js       # Form for adding new tasks
+│   ├── TaskList.js       # Display list of tasks
+│   ├── TaskStats.js      # Task statistics and progress
+│   └── *.css            # Component styles
+├── App.js               # Root component
+└── index.js            # Entry point
 ```
 
-## � Learning Points
+## Technologies Used
 
-### 1. Props (Data Flow)
-- Parent components pass data to children
-- Functions can be passed as props for communication
-- Props make components reusable
+- **React** - Frontend framework
+- **Axios** - HTTP client for API requests
+- **JSON Server** - Mock REST API
+- **CSS** - Custom styling
 
-### 2. Conditional Rendering
-- Use `&&` operator for simple conditionals
-- Use ternary operator `? :` for if/else logic
-- Show different UI based on state values
+## API Endpoints
 
-### 3. State Management
-- `useState` hook manages component state
-- State updates trigger re-renders
-- State should be managed at the right level
+- `GET /tasks` - Fetch all tasks
+- `POST /tasks` - Create a new task
+- `PATCH /tasks/:id` - Update a task
+- `DELETE /tasks/:id` - Delete a task
 
-### 4. Event Handling
-- onClick events for user interactions
-- Form submissions and input changes
-- Passing data between components
+## Contributing
 
-## 🎨 Styling Approach
+This is a learning project. Feel free to fork and experiment!
 
-- **Simple CSS** - No complex frameworks
-- **Responsive Design** - Works on mobile and desktop
-- **Clean Layout** - Easy to understand and modify
-- **Visual Feedback** - Hover effects and transitions
+## License
 
-## 🏃‍♂️ Next Steps for Learners
-
-After understanding this simple version, you can:
-
-1. **Add more features** - Edit tasks, due dates, categories
-2. **Add routing** - Multiple pages with React Router
-3. **Add API integration** - Save data to a backend
-4. **Add animations** - Smooth transitions and effects
-5. **Add testing** - Unit tests for components
-
-## 🤝 For Beginners
-
-This project is perfect if you're:
-- New to React and want to understand core concepts
-- Learning about props and state management
-- Looking for a simple, well-commented codebase
-- Want to see practical examples of conditional rendering
-
-## 📚 Resources
-
-- [React Documentation](https://reactjs.org/docs/getting-started.html)
-- [React Hooks Guide](https://reactjs.org/docs/hooks-intro.html)
-- [Props vs State](https://reactjs.org/docs/faq-state.html)
-
-## 📄 License
-
-This project is open source and available under the [MIT License](LICENSE).
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+MIT License
