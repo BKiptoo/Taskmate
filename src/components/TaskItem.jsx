@@ -1,4 +1,4 @@
-    function TaskItem({ task, onDelete, onToggle }) {
+function TaskItem({ task, onDelete, onToggle }) {
   return (
     <div className="task-item">
       <span style={{ textDecoration: task.completed ? "line-through" : "none" }}>
