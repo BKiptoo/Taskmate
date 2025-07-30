@@ -20,6 +20,7 @@ function TaskList() {
     getTasks();
   }, []);
 
+// This will handle deletion of task
   const handleDelete = async (id) => {
     try {
       const res = await fetch(`http://localhost:3001/tasks/${id}`, {
@@ -32,6 +33,7 @@ function TaskList() {
     }
   };
 
+    // This will handle completion of task
   const toggleComplete = async (id, completed) => {
     try {
       const res = await fetch(`http://localhost:3001/tasks/${id}`, {
