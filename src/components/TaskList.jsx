@@ -4,10 +4,11 @@ import TaskItem from "./TaskItem";
 function TaskList() {
   const [tasks, setTasks] = useState([]);
 
+  // Fetch tasks from db.json
   useEffect(() => {
     const getTasks = async () => {
       try {
-        const res = await fetch("http://localhost:5000/tasks");
+        const res = await fetch("http://localhost:3001/tasks");
         if (!res.ok) throw new Error("Failed to fetch tasks");
         const data = await res.json();
         setTasks(data);
@@ -21,7 +22,7 @@ function TaskList() {
 
   const handleDelete = async (id) => {
     try {
-      const res = await fetch(`http://localhost:5000/tasks/${id}`, {
+      const res = await fetch(`http://localhost:3001/tasks/${id}`, {
         method: "DELETE"
       });
       if (!res.ok) throw new Error("Failed to delete task");
@@ -33,7 +34,7 @@ function TaskList() {
 
   const toggleComplete = async (id, completed) => {
     try {
-      const res = await fetch(`http://localhost:5000/tasks/${id}`, {
+      const res = await fetch(`http://localhost:3001/tasks/${id}`, {
         method: "PATCH",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ completed: !completed })
