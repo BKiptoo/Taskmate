@@ -8,17 +8,27 @@
     {
       "id": "fbe9",
       "title": "Home",
-      "completed": false
+      "completed": true
     },
     {
       "id": "f878",
       "title": "Learn React  Before next week",
-      "completed": false
+      "completed": true
     },
     {
       "id": "c3ea",
       "title": "nu",
-      "completed": false
+      "completed": true
+    },
+    {
+      "id": "b37a",
+      "title": "km",
+      "completed": true
+    },
+    {
+      "id": "094f",
+      "title": "lm l",
+      "completed": true
     }
   ]
 }
