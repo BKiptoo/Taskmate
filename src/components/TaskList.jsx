@@ -42,7 +42,7 @@ function TaskList() {
         body: JSON.stringify({ completed: !completed })
       });
       if (!res.ok) throw new Error("Failed to update task");
-      setTasks(tasks.map(t => t.id === id ? { ...t, completed: !completed } : t));
+      setTasks(tasks.map(task => task.id === id ? { ...task, completed: !completed } : task));
     } catch (error) {
       console.error(`Error updating task ${id}:`, error);
     }
