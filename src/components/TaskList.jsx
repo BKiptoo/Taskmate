@@ -27,7 +27,7 @@ function TaskList() {
         method: "DELETE"
       });
       if (!res.ok) throw new Error("Failed to delete task");
-      setTasks(tasks.filter(t => t.id !== id));
+      setTasks(tasks.filter(task => task.id !== id));
     } catch (error) {
       console.error(`Error deleting task ${id}:`, error);
     }
